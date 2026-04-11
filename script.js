@@ -84,6 +84,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Console greeting
-    console.log('%c👋 Hello! This site was hand‑coded with Tailwind CSS and vanilla JavaScript.', 'color: #3b82f6; font-size: 1.1em;');
-    console.log('%cNo bloated frameworks, no AI‑generated slop.', 'color: #8b5cf6;');
+    console.log('%c👋 Hello! This site was hand‑coded with Tailwind CSS and vanilla JavaScript.', 'color: #a3d977; font-size: 1.1em;');
+    console.log('%cNo bloated frameworks, no AI‑generated slop.', 'color: #7aa36f;');
 });

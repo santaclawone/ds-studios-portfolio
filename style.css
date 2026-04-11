@@ -12,7 +12,7 @@ body * {
 
 /* Gradient text */
 .gradient-text {
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+    background: linear-gradient(90deg, #a3d977, #7aa36f);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -51,7 +51,7 @@ body * {
 /* Dark mode adjustments */
 @media (prefers-color-scheme: dark) {
     .bg-light {
-        background-color: #0f172a;
+        background-color: #1a202c;
     }
 }
 
