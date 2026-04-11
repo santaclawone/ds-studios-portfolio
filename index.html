@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Morgan | Web Design & Development</title>
+    <meta name="description" content="Crafting digital experiences that are fast, beautiful, and human‑centered. Irish‑based web designer and front‑end developer.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#8b5cf6',
+                        dark: '#0f172a',
+                        light: '#f8fafc'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace']
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'gradient': 'gradient 8s ease infinite'
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        gradient: {
+                            '0%, 100%': { backgroundPosition: '0% 50%' },
+                            '50%': { backgroundPosition: '100% 50%' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body class="bg-light text-dark font-sans antialiased transition-colors duration-300 dark:bg-dark dark:text-light">
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 backdrop-blur-md bg-white/80 dark:bg-dark/80 border-b border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight">
+                <span class="text-primary dark:text-secondary">Alex</span>Morgan
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#work" class="hover:text-primary dark:hover:text-secondary transition">Work</a>
+                <a href="#services" class="hover:text-primary dark:hover:text-secondary transition">Services</a>
+                <a href="#about" class="hover:text-primary dark:hover:text-secondary transition">About</a>
+                <a href="#contact" class="hover:text-primary dark:hover:text-secondary transition">Contact</a>
+            </nav>
+            <button id="themeToggle" class="p-2 rounded-full bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
+                <i class="fas fa-moon dark:fa-sun"></i>
+            </button>
+            <button class="md:hidden p-2">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center pt-20">
+        <div class="container mx-auto px-6 py-20">
+            <div class="max-w-4xl">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                    Digital experiences
+                    <span class="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">that feel human</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-10 max-w-2xl">
+                    I design and build websites that are fast, beautiful, and focused on your audience. 
+                    Based in Ireland, working worldwide.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#work" class="px-8 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition shadow-lg hover:shadow-xl">
+                        See my work <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="px-8 py-4 border-2 border-gray-300 dark:border-gray-700 font-semibold rounded-full hover:border-primary dark:hover:border-secondary transition">
+                        Get in touch
+                    </a>
+                </div>
+            </div>
+            <div class="mt-20 relative">
+                <div class="absolute -top-10 -left-10 w-72 h-72 bg-purple-300/20 dark:bg-purple-500/10 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute top-20 -right-10 w-96 h-96 bg-blue-300/20 dark:bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+                <div class="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800">
+                        <i class="fas fa-bolt text-4xl text-primary mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Lightning Fast</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Optimized performance with Core Web Vitals scores of 95+.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800">
+                        <i class="fas fa-palette text-4xl text-secondary mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Pixel‑Perfect</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Every detail crafted for visual harmony and usability.</p>
+                    </div>
+                    <div class="bg-white dark:bg-gray-900 p-8 rounded-3xl shadow-xl border border-gray-100 dark:border-gray-800">
+                        <i class="fas fa-code text-4xl text-green-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Clean Code</h3>
+                        <p class="text-gray-600 dark:text-gray-400">Semantic, accessible, maintainable – no spaghetti.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work / Portfolio -->
+    <section id="work" class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Selected Work</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Plate Logic Dashboard" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Plate Logic</h3>
+                            <p class="text-gray-200">Food‑waste analytics dashboard for hotels.</p>
+                            <a href="#" class="inline-block mt-4 text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition">Case study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="E‑commerce Platform" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Boutique Store</h3>
+                            <p class="text-gray-200">Custom e‑commerce with React & Stripe integration.</p>
+                            <a href="#" class="inline-block mt-4 text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition">Case study</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Portfolio Site" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
+                        <div>
+                            <h3 class="text-2xl font-bold text-white mb-2">Artist Portfolio</h3>
+                            <p class="text-gray-200">Immersive gallery with smooth animations.</p>
+                            <a href="#" class="inline-block mt-4 text-white border border-white px-4 py-2 rounded-full hover:bg-white hover:text-black transition">Case study</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center text-primary dark:text-secondary font-semibold text-lg hover:underline">
+                    View all projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">What I Offer</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="text-center p-8 rounded-3xl border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-primary/10 dark:bg-primary/20 flex items-center justify-center">
+                        <i class="fas fa-pencil-alt text-3xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">UI/UX Design</h3>
+                    <p class="text-gray-600 dark:text-gray-400">User‑centered interfaces that are intuitive, accessible, and delightful.</p>
+                </div>
+                <div class="text-center p-8 rounded-3xl border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-secondary/10 dark:bg-secondary/20 flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Front‑End Development</h3>
+                    <p class="text-gray-600 dark:text-gray-400">React, Vue, or vanilla JS – clean, maintainable, and fast.</p>
+                </div>
+                <div class="text-center p-8 rounded-3xl border border-gray-200 dark:border-gray-800 hover:shadow-2xl transition">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-green-500/10 dark:bg-green-500/20 flex items-center justify-center">
+                        <i class="fas fa-rocket text-3xl text-green-500"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Performance & SEO</h3>
+                    <p class="text-gray-600 dark:text-gray-400">Optimized for speed, search engines, and conversion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gray-50 dark:bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl md:text-5xl font-bold mb-12 text-center">Kind Words</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg">
+                    <p class="text-xl italic mb-6">“Alex transformed our online presence. The site is not only stunning but also increased our leads by 40%.”</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">Sarah Chen</h4>
+                            <p class="text-gray-500 dark:text-gray-400">CEO, Plate Logic</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg">
+                    <p class="text-xl italic mb-6">“The attention to detail is incredible. Every interaction feels seamless and purposeful.”</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">Mark O'Sullivan</h4>
+                            <p class="text-gray-500 dark:text-gray-400">Director, Irish Tourism Board</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-3xl shadow-lg">
+                    <p class="text-xl italic mb-6">“Working with Alex was a breath of fresh air – delivered ahead of schedule and exceeded expectations.”</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
+                        <div>
+                            <h4 class="font-bold">Lisa Gallagher</h4>
+                            <p class="text-gray-500 dark:text-gray-400">Founder, GreenTech Solutions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Let's build something amazing</h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-12">Have a project in mind? I'd love to hear about it.</p>
+                <form class="space-y-6 text-left">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block mb-2 font-medium">Name</label>
+                            <input type="text" id="name" class="w-full p-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:border-primary dark:focus:border-secondary">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2 font-medium">Email</label>
+                            <input type="email" id="email" class="w-full p-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:border-primary dark:focus:border-secondary">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="message" class="block mb-2 font-medium">Message</label>
+                        <textarea id="message" rows="5" class="w-full p-4 rounded-xl border border-gray-300 dark:border-gray-700 bg-transparent focus:outline-none focus:border-primary dark:focus:border-secondary"></textarea>
+                    </div>
+                    <button type="submit" class="px-10 py-4 bg-primary text-white font-semibold rounded-full hover:bg-primary/90 transition shadow-lg">
+                        Send message <i class="fas fa-paper-plane ml-2"></i>
+                    </button>
+                </form>
+                <p class="mt-10 text-gray-500 dark:text-gray-400">
+                    Or email me directly at 
+                    <a href="mailto:hello@alexmorgan.design" class="text-primary dark:text-secondary hover:underline">hello@alexmorgan.design</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600 dark:text-gray-400">
+                &copy; <span id="currentYear"></span> Alex Morgan. All rights reserved.
+            </p>
+            <div class="mt-6 space-x-6">
+                <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-secondary"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-secondary"><i class="fab fa-github text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-secondary"><i class="fab fa-linkedin text-xl"></i></a>
+                <a href="#" class="text-gray-500 hover:text-primary dark:hover:text-secondary"><i class="fab fa-dribbble text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
