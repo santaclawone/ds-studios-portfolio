@@ -6,18 +6,20 @@
 <title>DS Studios — Web Design & Development, Dublin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds-studios.css">
 <style>
+/* BASE */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',sans-serif;background:#05080e;color:#e8eaed;line-height:1.6;overflow-x:hidden}
 .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
 /* CURSOR */
-.cursor-dot{position:fixed;pointer-events:none;z-index:99999;width:8px;height:8px;border-radius:50%;background:#a3d977;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s}
-.cursor-dot.grow{width:18px;height:18px;background:#8bc45a}
+.cursor-dot{position:fixed;pointer-events:none;z-index:99999;width:8px;height:8px;border-radius:50%;background:#a3d977;transform:translate(-50%,-50%);transition:width 0.2s,height 0.2s,box-shadow 0.2s}
+.cursor-dot.grow{width:20px;height:20px;box-shadow:0 0 30px rgba(163,217,119,0.5)}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:100;background:#05080e;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);transition:all 0.3s}
+nav{position:sticky;top:0;z-index:100;background:#05080e;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,0.06);transition:background 0.3s}
 .nav-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
 .logo{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:700;color:#a3d977}
 .logo span{color:#e8eaed}
@@ -31,28 +33,28 @@ nav{position:sticky;top:0;z-index:100;background:#05080e;padding:16px 20px;borde
 .hero{text-align:center;padding:120px 20px 60px;position:relative}
 .hero-grid{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);background-size:60px 60px}
 .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.5rem,7vw,4.5rem);font-weight:700;line-height:1.1;letter-spacing:-0.03em;margin-bottom:20px;position:relative}
-.hero .green{background:linear-gradient(135deg,#a3d977,#7aa36f);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
 .hero p{font-size:1.1rem;color:#94a3b8;max-width:560px;margin:0 auto 32px;position:relative}
 .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
 
-/* BUTTONS */
-.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#a3d977;color:#05080e;border-radius:12px;text-decoration:none;font-weight:600;font-size:1rem;transition:all 0.2s;cursor:pointer;will-change:transform;position:relative;overflow:hidden}
+/* DESIGN LANG BUTTONS - extended */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#a3d977;color:#05080e;border-radius:12px;text-decoration:none;font-weight:600;font-size:1rem;cursor:pointer;will-change:transform;position:relative;overflow:hidden;border:none}
 .btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s}
 .btn-primary:hover::before{left:100%}
-.btn-primary:hover{background:#8bc45a;box-shadow:0 4px 20px rgba(163,217,119,0.25)}
+.btn-primary:hover{box-shadow:0 4px 20px rgba(163,217,119,0.25)}
 .btn-primary:active{transform:scale(0.96)!important}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:#e8eaed;border-radius:12px;text-decoration:none;font-weight:500;font-size:1rem;transition:all 0.2s;cursor:pointer;will-change:transform;position:relative;overflow:hidden}
-.btn-secondary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(163,217,119,0.08),transparent);transition:left 0.5s}
+
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:#e8eaed;border-radius:12px;text-decoration:none;font-weight:500;font-size:1rem;cursor:pointer;will-change:transform;position:relative;overflow:hidden}
+.btn-secondary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(163,217,119,0.1),transparent);transition:left 0.5s}
 .btn-secondary:hover::before{left:100%}
 .btn-secondary:hover{border-color:#a3d977;color:#a3d977;background:rgba(163,217,119,0.04)}
 
 /* SECTIONS */
 section{padding:80px 0}
-.label{font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:600;color:#a3d977;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px}
+.label{font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:600;color:#a3d977;text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;opacity:0.8}
 h2{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;letter-spacing:-0.02em;line-height:1.15;margin-bottom:12px}
 .sub{color:#64748b;font-size:1rem;max-width:560px;margin-bottom:40px}
 
-/* SCROLL REVEAL (starts visible, just animates nicer) */
+/* SCROLL REVEAL */
 .reveal{opacity:1;transform:translateY(0);transition:opacity 0.7s ease-out,transform 0.7s ease-out}
 .reveal.invisible{opacity:0;transform:translateY(30px)}
 .reveal.visible{opacity:1;transform:translateY(0)}
@@ -67,9 +69,9 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;lette
 .mp-block p{color:#94a3b8;font-size:0.9rem;line-height:1.6}
 
 /* WORK */
-.work-row{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px;align-items:center;transition:transform 0.4s}
+.work-row{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:48px;align-items:center}
 @media(max-width:700px){.work-row{grid-template-columns:1fr}}
-.work-visual{aspect-ratio:4/3;border-radius:12px;background:rgba(15,23,42,0.6);border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden;transition:transform 0.4s;cursor:pointer}
+.work-visual{aspect-ratio:4/3;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:20px;position:relative;overflow:hidden;transition:transform 0.4s;cursor:pointer}
 .work-visual:hover{transform:scale(1.02)}
 .work-tag{font-family:'JetBrains Mono',monospace;font-size:0.65rem;background:rgba(163,217,119,0.1);color:#a3d977;padding:3px 10px;border-radius:20px;display:inline-block;margin-bottom:8px}
 .work-row h3{font-family:'Space Grotesk',sans-serif;font-size:1.3rem;font-weight:600;margin-bottom:8px}
@@ -101,19 +103,11 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;lette
 .dl-editor{max-width:900px;margin:0 auto;border-radius:12px;overflow:hidden;background:#03050a;border:1px solid rgba(163,217,119,0.08)}
 .dl-header{display:flex;align-items:center;gap:8px;padding:10px 16px;background:rgba(0,0,0,0.3);border-bottom:1px solid rgba(163,217,119,0.06)}
 .dl-dot{width:10px;height:10px;border-radius:50%}
-.dl-dot:nth-child(1){background:#FF5F56}
-.dl-dot:nth-child(2){background:#FFBD2E}
-.dl-dot:nth-child(3){background:#27C93F}
+.dl-dot:nth-child(1){background:#FF5F56}.dl-dot:nth-child(2){background:#FFBD2E}.dl-dot:nth-child(3){background:#27C93F}
 .dl-label{font-size:0.7rem;color:#64748b;margin-left:8px;font-family:'JetBrains Mono',monospace}
 .dl-badge{margin-left:auto;font-size:0.6rem;color:#a3d977;font-family:'JetBrains Mono',monospace;background:rgba(163,217,119,0.1);padding:3px 10px;border-radius:6px}
 .dl-editor pre{padding:20px;font-family:'JetBrains Mono',monospace;font-size:0.82rem;line-height:1.8;overflow-x:auto;color:#94a3b8;tab-size:2;white-space:pre;margin:0}
-.dl-cm{color:#475569;font-style:italic}
-.dl-kw{color:#06b6d4}
-.dl-fn{color:#c084fc}
-.dl-str{color:#34d399}
-.dl-num{color:#fbbf24}
-.dl-pr{color:#f472b6}
-.dl-props{color:#64748b}
+.dl-cm{color:#475569;font-style:italic}.dl-kw{color:#06b6d4}.dl-fn{color:#c084fc}.dl-str{color:#34d399}.dl-num{color:#fbbf24}.dl-pr{color:#f472b6}.dl-props{color:#64748b}
 .dl-footer{padding:12px 20px;background:rgba(163,217,119,0.02);border-top:1px solid rgba(163,217,119,0.06);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:0.8rem;color:#64748b}
 
 /* CONTACT */
@@ -124,10 +118,9 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;lette
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 @media(max-width:500px){.form-row{grid-template-columns:1fr}}
 .form-textarea{min-height:120px;resize:vertical;margin-bottom:16px}
-.submit-btn{padding:14px 32px;background:#a3d977;color:#05080e;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;will-change:transform;position:relative;overflow:hidden}
+.submit-btn{padding:14px 32px;background:#a3d977;color:#05080e;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;position:relative;overflow:hidden;transition:all 0.2s}
 .submit-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s}
-.submit-btn:hover::before{left:100%}
-.submit-btn:hover{background:#8bc45a;box-shadow:0 4px 20px rgba(163,217,119,0.25)}
+.submit-btn:hover::before{left:100%}.submit-btn:hover{box-shadow:0 4px 20px rgba(163,217,119,0.25)}
 .submit-btn:active{transform:scale(0.96)!important}
 
 /* FOOTER */
@@ -164,11 +157,11 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
 <!-- HERO -->
 <section class="hero">
   <div class="hero-grid"></div>
-  <h1>Sites That Ship.<br>Products That <span class="green">Last.</span></h1>
-  <p>Small studio from Dublin building for founders who care about craft — not agencies who chase awards.</p>
+  <h1>Sites That Ship.<br>Products That <span class="dl-gradient-hero">Last.</span></h1>
+  <p class="dl-hero-subtitle">Small studio from Dublin building for founders who care about craft — not agencies who chase awards.</p>
   <div class="hero-cta">
-    <a href="#work" class="btn-primary">See the work →</a>
-    <a href="#contact" class="btn-secondary">Start a conversation →</a>
+    <a href="#work" class="btn-primary dl-cta-primary">See the work →</a>
+    <a href="#contact" class="btn-secondary dl-cta-secondary">Start a conversation →</a>
   </div>
 </section>
 
@@ -213,7 +206,7 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
     <p class="sub reveal invisible">Every one started with a conversation and a problem worth solving.</p>
 
     <div class="work-row reveal invisible">
-      <div class="work-visual" style="background:linear-gradient(135deg,#0d2818,#1a4731)"><span style="font-size:3rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(163,217,119,0.15)">GL</span></div>
+      <div class="work-visual dl-portfolio-card" style="background:linear-gradient(135deg,#0d2818,#1a4731);border:none;border-radius:12px"><span style="font-size:3rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(163,217,119,0.15)">GL</span></div>
       <div>
         <div class="work-tag">E-commerce</div>
         <h3>GreenLeaf Organics</h3>
@@ -224,7 +217,7 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
     </div>
 
     <div class="work-row reveal invisible">
-      <div class="work-visual" style="background:linear-gradient(135deg,#1a1a2e,#16213e)"><span style="font-size:3rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(99,102,241,0.15)">MF</span></div>
+      <div class="work-visual dl-portfolio-card" style="background:linear-gradient(135deg,#1a1a2e,#16213e);border:none;border-radius:12px"><span style="font-size:3rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(99,102,241,0.15)">MF</span></div>
       <div>
         <div class="work-tag">Fintech</div>
         <h3>Meridian Finance</h3>
@@ -235,7 +228,7 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
     </div>
 
     <div class="work-row reveal invisible">
-      <div class="work-visual" style="background:linear-gradient(135deg,#2d1b4e,#1a0a30)"><span style="font-size:3rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(192,132,252,0.15)">PP</span></div>
+      <div class="work-visual dl-portfolio-card" style="background:linear-gradient(135deg,#2d1b4e,#1a0a30);border:none;border-radius:12px"><span style="font-size:3rem;font-family:'Space Grotesk',sans-serif;font-weight:700;color:rgba(192,132,252,0.15)">PP</span></div>
       <div>
         <div class="work-tag">Media</div>
         <h3>Pulse Podcast</h3>
@@ -318,10 +311,10 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
       <div class="dl-header">
         <span class="dl-dot"></span><span class="dl-dot"></span><span class="dl-dot"></span>
         <span class="dl-label">ds-studios.dl</span>
-        <span class="dl-badge">✦ 16 components</span>
+        <span class="dl-badge">✦ 15 components</span>
       </div>
-      <pre><span class="dl-cm">// DS Studios — Design Lang Components</span>
-<span class="dl-cm">// Each compiles to CSS + JS runtime</span>
+      <pre><span class="dl-cm">// DS Studios — Design Lang</span>
+<span class="dl-cm">// Compiled via `dl compile ds-studios.dl`</span>
 
 <span class="dl-kw">element</span> glass-nav {
   <span class="dl-pr">surface</span>: <span class="dl-fn">glass</span>(<span class="dl-pr">blur</span>: <span class="dl-num">20</span><span class="dl-props">px</span>)
@@ -334,7 +327,7 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
 
 <span class="dl-kw">element</span> cta-primary {
   <span class="dl-pr">surface</span>: <span class="dl-fn">glass</span>(<span class="dl-pr">blur</span>: <span class="dl-num">8</span><span class="dl-props">px</span>)
-  <span class="dl-pr">physics</span>: <span class="dl-fn">spring</span>(<span class="dl-pr">stiffness</span>: <span class="dl-num">280</span>, <span class="dl-pr">damping</span>: <span class="dl-num">22</span>, <span class="dl-pr">mass</span>: <span class="dl-num">8</span><span class="dl-props">g</span>)
+  <span class="dl-pr">touch_targets</span>: <span class="dl-num">52</span><span class="dl-props">px</span>
   <span class="dl-pr">@hover</span>: <span class="dl-fn">scale</span>(<span class="dl-pr">amount</span>: <span class="dl-num">1.05</span>)
   <span class="dl-pr">@press</span>: <span class="dl-fn">scale</span>(<span class="dl-pr">amount</span>: <span class="dl-num">0.96</span>)
 }
@@ -346,19 +339,20 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
 
 <span class="dl-kw">element</span> portfolio-card {
   <span class="dl-pr">morph</span>: <span class="dl-fn">rounded</span>(<span class="dl-pr">radius</span>: <span class="dl-num">20</span><span class="dl-props">px</span>)
+  <span class="dl-pr">surface</span>: <span class="dl-fn">glass</span>(<span class="dl-pr">blur</span>: <span class="dl-num">12</span><span class="dl-props">px</span>)
   <span class="dl-pr">light</span>: <span class="dl-fn">spotlight</span>(<span class="dl-pr">radius</span>: <span class="dl-num">200</span><span class="dl-props">px</span>)
 }
 
-<span class="dl-kw">element</span> input-glass {
-  <span class="dl-pr">surface</span>: <span class="dl-fn">glass</span>(<span class="dl-pr">blur</span>: <span class="dl-num">6</span><span class="dl-props">px</span>)
-  <span class="dl-pr">focus</span>: <span class="dl-fn">auto</span>(<span class="dl-pr">style</span>: <span class="dl-str">glow</span>)
+<span class="dl-kw">element</span> service-card {
+  <span class="dl-pr">surface</span>: <span class="dl-fn">glass</span>(<span class="dl-pr">blur</span>: <span class="dl-num">14</span><span class="dl-props">px</span>)
+  <span class="dl-pr">light</span>: <span class="dl-fn">spotlight</span>(<span class="dl-pr">radius</span>: <span class="dl-num">180</span><span class="dl-props">px</span>)
 }
 
-<span class="dl-cm">// ... and 10 more components</span>
-<span class="dl-cm">// Compile: dl compile ds-studios.dl</span></pre>
+<span class="dl-cm">// ... and 8 more components</span>
+<span class="dl-cm">// https://github.com/santaclawone/design-lang</span></pre>
       <div class="dl-footer">
         <span>Compiled to <strong>CSS</strong> + <strong>JS Runtime</strong></span>
-        <a href="#" style="color:#a3d977;text-decoration:none">Design Lang docs →</a>
+        <a href="https://github.com/santaclawone/design-lang" style="color:#a3d977;text-decoration:none">Design Lang repo →</a>
       </div>
     </div>
   </div>
@@ -378,11 +372,11 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
       </div>
       <form id="contactForm" class="reveal invisible">
         <div class="form-row">
-          <input type="text" class="form-input" placeholder="Your name" required>
-          <input type="email" class="form-input" placeholder="Your email" required>
+          <input type="text" class="form-input dl-input-glass" placeholder="Your name" required>
+          <input type="email" class="form-input dl-input-glass" placeholder="Your email" required>
         </div>
-        <input type="text" class="form-input" style="margin-bottom:16px" placeholder="Project budget (optional)">
-        <textarea class="form-textarea" placeholder="Tell us about your project. What problem are you solving?" required></textarea>
+        <input type="text" class="form-input dl-input-glass" style="margin-bottom:16px" placeholder="Project budget (optional)">
+        <textarea class="form-textarea dl-textarea-glass" placeholder="Tell us about your project. What problem are you solving?" required></textarea>
         <button type="submit" class="submit-btn">Send message →</button>
       </form>
     </div>
@@ -395,7 +389,7 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">DS<span> Studios</span></div>
-        <p>Based in Dublin, building for the world.</p>
+        <p>Based in Dublin, building for the world. This page runs <strong style="color:#a3d977;font-weight:600">Design Lang</strong> — compiled from 15 components.</p>
       </div>
       <div class="footer-col">
         <h5>Initiatives</h5>
@@ -423,19 +417,27 @@ footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 DS Studios. Made in Ireland</p>
-      <span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#a3d977">✦ Built with Design Lang</span>
+      <span class="dl-dl-badge" style="display:inline-flex;align-items:center;gap:6px;padding:6px 14px">✦ Built with Design Lang</span>
     </div>
   </div>
 </footer>
 
+<!-- DESIGN LANG RUNTIME -->
+<script src="ds-studios.runtime.js"></script>
 <script>
+// ─── Init Design Lang Components ───
+if (typeof DesignLang !== 'undefined') {
+  DesignLang.spring('.dl-cta-primary', { stiffness: 280, damping: 22, mass: 0.008 });
+  DesignLang.spring('.dl-cta-secondary', { stiffness: 200, damping: 18, mass: 0.01 });
+}
+
 // ─── Cursor ───
 var cursor = document.getElementById('cursor');
 document.addEventListener('mousemove', function(e) {
   cursor.style.left = e.clientX + 'px';
   cursor.style.top = e.clientY + 'px';
 });
-document.querySelectorAll('a, button, .work-visual, .init-block, .client-block').forEach(function(el) {
+document.querySelectorAll('a, button, .work-visual, .init-block, .client-block, .mp-block').forEach(function(el) {
   el.addEventListener('mouseenter', function() { cursor.classList.add('grow'); });
   el.addEventListener('mouseleave', function() { cursor.classList.remove('grow'); });
 });
@@ -446,14 +448,13 @@ document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     var target = document.querySelector(this.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      var top = target.getBoundingClientRect().top + window.scrollY - 70;
-      window.scrollTo({ top: top, behavior: 'smooth' });
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 70, behavior: 'smooth' });
     }
   });
 });
 
 // ─── Magnetic Buttons ───
-document.querySelectorAll('.btn-primary, .btn-secondary').forEach(function(btn) {
+document.querySelectorAll('.btn-primary, .btn-secondary, .submit-btn').forEach(function(btn) {
   btn.addEventListener('mousemove', function(e) {
     var r = this.getBoundingClientRect();
     var x = (e.clientX - r.left - r.width / 2) * 0.25;
@@ -483,13 +484,7 @@ document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el)
 // ─── Nav Scroll Effect ───
 var nav = document.getElementById('nav');
 window.addEventListener('scroll', function() {
-  if (window.scrollY > 80) {
-    nav.style.background = 'rgba(5,8,14,0.92)';
-    nav.style.borderBottomColor = 'rgba(255,255,255,0.06)';
-  } else {
-    nav.style.background = '#05080e';
-    nav.style.borderBottomColor = 'rgba(255,255,255,0.06)';
-  }
+  nav.style.background = window.scrollY > 80 ? 'rgba(5,8,14,0.92)' : '#05080e';
 });
 
 // ─── Contact Form ───

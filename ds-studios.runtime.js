@@ -74,17 +74,3 @@ if (typeof DesignLang === 'undefined') {
 
 
 /* ─── Component Initialization ─── */
-
-
-
-
-
-
-
-DesignLang.spring('.dl-cta-button', { stiffness: 200, damping: 20, mass: 0.01 });
-
-
-
-
-
-DesignLang.spring('.dl-cta-button-secondary', { stiffness: 200, damping: 20, mass: 0.01 });

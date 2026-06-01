@@ -1,95 +1,77 @@
-// DS Studios - Design Lang Component Definitions
-// Brand colors: primary #a3d977 (green), secondary #7aa36f (muted green)
-// Empire 2026 aesthetic with DS Studios green accents
+// DS Studios — Design Lang v2.2
+// Source of truth. Compile with: dl compile ds-studios.dl
 
-// === NAVIGATION ===
 element glass-nav {
-  surface: glass(blur: 12px)
-  touch_targets: 48px
+  surface: glass(blur: 20px)
 }
 
 element nav-link {
-  @hover: scale(amount: 1.04)
+  @hover: scale(amount: 1.05)
 }
 
-// === HERO ===
-element gradient-heading {
+element gradient-hero {
   typography: gradient(linear, [#a3d977, #7aa36f])
-  @birth: fade-in(duration: 0.6s)
-}
-
-element hero-subtitle {
   @birth: fade-in(duration: 0.8s)
 }
 
-// === BUTTONS ===
-element cta-button {
-  touch_targets: 48px
-  physics: spring(stiffness: 200, damping: 20, mass: 10g)
-  @hover: scale(amount: 1.04)
-  @press: scale(amount: 0.97)
+element hero-subtitle {
+  @birth: fade-in(duration: 1s)
 }
 
-element cta-button-secondary {
-  touch_targets: 48px
-  surface: glass(blur: 6px)
-  physics: spring(stiffness: 200, damping: 20, mass: 10g)
-  @hover: scale(amount: 1.04)
-  @press: scale(amount: 0.97)
-}
-
-// === FEATURE CARDS ===
-element feature-card {
+element cta-primary {
   surface: glass(blur: 8px)
+  touch_targets: 52px
+  @hover: scale(amount: 1.05)
+  @press: scale(amount: 0.96)
 }
 
-element feature-icon {
-  morph: rounded(radius: 12px)
-}
-
-// === PORTFOLIO ===
-element portfolio-card {
-  morph: rounded(radius: 24px)
-  light: spotlight(radius: 150px, intensity: 0.15)
-}
-
-// === SERVICES ===
-element services-card {
-  surface: glass(blur: 6px)
-}
-
-// === TESTIMONIALS ===
-element testimonials-card {
-  surface: glass(blur: 6px)
-}
-
-element testimonial-avatar {
-  morph: rounded(radius: 50%)
-}
-
-// === CONTACT ===
-element input-field {
-  surface: glass(blur: 4px)
-  focus: auto(style: glow)
-  touch_targets: 44px
-}
-
-element textarea-field {
-  surface: glass(blur: 4px)
-  focus: auto(style: glow)
-}
-
-// === FOOTER ===
-element social-link {
-  @hover: scale(amount: 1.15)
-}
-
-element footer-link {
+element cta-secondary {
   @hover: scale(amount: 1.04)
+  @press: scale(amount: 0.97)
 }
 
-// === SECTION ===
-element section-heading {
-  typography: gradient(linear, [#a3d977, #7aa36f])
+element feature-card {
+  surface: glass(blur: 16px)
+  light: spotlight(radius: 250px, intensity: 0.12)
+  @hover: scale(amount: 1.03)
+}
+
+element portfolio-card {
+  morph: rounded(radius: 20px)
+  surface: glass(blur: 12px)
+  light: spotlight(radius: 200px, intensity: 0.18)
+  @hover: scale(amount: 1.02)
+}
+
+element service-card {
+  surface: glass(blur: 14px)
+  light: spotlight(radius: 180px, intensity: 0.1)
+  @hover: scale(amount: 1.03)
+}
+
+element testimonial-card {
+  surface: glass(blur: 12px)
+}
+
+element input-glass {
+  surface: glass(blur: 6px)
+  focus: auto(style: glow, width: 2px)
+  touch_targets: 48px
+}
+
+element textarea-glass {
+  surface: glass(blur: 6px)
+  focus: auto(style: glow, width: 2px)
+}
+
+element social-icon {
+  @hover: scale(amount: 1.2)
+}
+
+element section-title {
   @birth: fade-in(duration: 0.6s)
+}
+
+element dl-badge {
+  surface: glass(blur: 8px)
 }
