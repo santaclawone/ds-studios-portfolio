@@ -36,10 +36,14 @@ nav{position:sticky;top:0;z-index:100;background:#05080e;padding:16px 20px;borde
 .hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative}
 
 /* BUTTONS */
-.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#a3d977;color:#05080e;border-radius:12px;text-decoration:none;font-weight:600;font-size:1rem;transition:all 0.2s;cursor:pointer;will-change:transform}
+.btn-primary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:#a3d977;color:#05080e;border-radius:12px;text-decoration:none;font-weight:600;font-size:1rem;transition:all 0.2s;cursor:pointer;will-change:transform;position:relative;overflow:hidden}
+.btn-primary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s}
+.btn-primary:hover::before{left:100%}
 .btn-primary:hover{background:#8bc45a;box-shadow:0 4px 20px rgba(163,217,119,0.25)}
 .btn-primary:active{transform:scale(0.96)!important}
-.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:#e8eaed;border-radius:12px;text-decoration:none;font-weight:500;font-size:1rem;transition:all 0.2s;cursor:pointer;will-change:transform}
+.btn-secondary{display:inline-flex;align-items:center;gap:8px;padding:14px 32px;background:transparent;border:1px solid rgba(255,255,255,0.12);color:#e8eaed;border-radius:12px;text-decoration:none;font-weight:500;font-size:1rem;transition:all 0.2s;cursor:pointer;will-change:transform;position:relative;overflow:hidden}
+.btn-secondary::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(163,217,119,0.08),transparent);transition:left 0.5s}
+.btn-secondary:hover::before{left:100%}
 .btn-secondary:hover{border-color:#a3d977;color:#a3d977;background:rgba(163,217,119,0.04)}
 
 /* SECTIONS */
@@ -120,7 +124,9 @@ h2{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;lette
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 @media(max-width:500px){.form-row{grid-template-columns:1fr}}
 .form-textarea{min-height:120px;resize:vertical;margin-bottom:16px}
-.submit-btn{padding:14px 32px;background:#a3d977;color:#05080e;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;will-change:transform}
+.submit-btn{padding:14px 32px;background:#a3d977;color:#05080e;border:none;border-radius:12px;font-size:1rem;font-weight:600;cursor:pointer;transition:all 0.2s;will-change:transform;position:relative;overflow:hidden}
+.submit-btn::before{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);transition:left 0.5s}
+.submit-btn:hover::before{left:100%}
 .submit-btn:hover{background:#8bc45a;box-shadow:0 4px 20px rgba(163,217,119,0.25)}
 .submit-btn:active{transform:scale(0.96)!important}
 
