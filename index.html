@@ -528,6 +528,19 @@ footer{
 .reveal-delay-2{transition-delay:0.2s}
 .reveal-delay-3{transition-delay:0.3s}
 
+/* ─── SCROLL PROGRESS ─── */
+.scroll-progress{
+  position:fixed;top:0;left:0;width:0%;height:2px;
+  background:linear-gradient(90deg,#a3d977,#7aa36f);
+  z-index:1001;transition:width 0.1s linear;
+}
+
+/* ─── 3D CARD PERSPECTIVE ─── */
+.tilt-3d{transform-style:preserve-3d;will-change:transform}
+
+/* ─── MAGNETIC BUTTON ─── */
+.magnetic-wrap{position:relative;display:inline-flex}
+
 /* ─── RESPONSIVE ─── */
 @media(max-width:768px){
   .nav-links{display:none}
@@ -544,6 +557,9 @@ footer{
 <!-- Cursor -->
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- Ambient Background -->
 <div class="ambient-bg">
@@ -593,17 +609,17 @@ footer{
     <h2 class="section-title reveal">Every Detail<br>Engineered.</h2>
     <p class="section-sub reveal">We design and build with intent. Every interaction, every animation, every line of code serves your business goals — not our portfolio.</p>
     <div class="features-grid">
-      <div class="feature-card dl-feature-card reveal reveal-delay-1">
+      <div class="feature-card dl-feature-card tilt-3d reveal reveal-delay-1">
         <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
         <h3>Lightning Fast</h3>
         <p>Sub-second load times, optimized Core Web Vitals, and performance budgets that keep your site fast as it grows.</p>
       </div>
-      <div class="feature-card dl-feature-card reveal reveal-delay-2">
+      <div class="feature-card dl-feature-card tilt-3d reveal reveal-delay-2">
         <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
         <h3>Pixel-Perfect</h3>
         <p>Design systems built for consistency — every component looks and feels intentional across every screen size.</p>
       </div>
-      <div class="feature-card dl-feature-card reveal reveal-delay-3">
+      <div class="feature-card dl-feature-card tilt-3d reveal reveal-delay-3">
         <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
         <h3>Clean Code</h3>
         <p>Clean, documented codebases with accessibility baked in from day one. Built to scale, not to be rewritten.</p>
@@ -619,7 +635,7 @@ footer{
     <h2 class="section-title reveal">Selected Projects</h2>
     <p class="section-sub reveal">A selection of brands we've helped bring to life through design and development.</p>
     <div class="portfolio-grid">
-      <div class="portfolio-card dl-portfolio-card reveal reveal-delay-1">
+      <div class="portfolio-card dl-portfolio-card tilt-3d reveal reveal-delay-1">
         <div class="card-bg" style="background:linear-gradient(135deg,#0d2818,#1a4731)"></div>
         <div class="card-overlay">
           <div class="card-tag">E-commerce</div>
@@ -628,7 +644,7 @@ footer{
           <div class="card-tech">Shopify + Next.js</div>
         </div>
       </div>
-      <div class="portfolio-card dl-portfolio-card reveal reveal-delay-2">
+      <div class="portfolio-card dl-portfolio-card tilt-3d reveal reveal-delay-2">
         <div class="card-bg" style="background:linear-gradient(135deg,#1a1a2e,#16213e)"></div>
         <div class="card-overlay">
           <div class="card-tag">Fintech</div>
@@ -637,7 +653,7 @@ footer{
           <div class="card-tech">React + D3</div>
         </div>
       </div>
-      <div class="portfolio-card dl-portfolio-card reveal reveal-delay-1">
+      <div class="portfolio-card dl-portfolio-card tilt-3d reveal reveal-delay-1">
         <div class="card-bg" style="background:linear-gradient(135deg,#2d1b4e,#1a0a30)"></div>
         <div class="card-overlay">
           <div class="card-tag">Media</div>
@@ -646,7 +662,7 @@ footer{
           <div class="card-tech">Next.js + Supabase</div>
         </div>
       </div>
-      <div class="portfolio-card dl-portfolio-card reveal reveal-delay-2">
+      <div class="portfolio-card dl-portfolio-card tilt-3d reveal reveal-delay-2">
         <div class="card-bg" style="background:linear-gradient(135deg,#1a2e1a,#0d2818)"></div>
         <div class="card-overlay">
           <div class="card-tag">Food Tech</div>
@@ -666,7 +682,7 @@ footer{
     <h2 class="section-title reveal">Services</h2>
     <p class="section-sub reveal">From discovery to deployment — design and development services tailored to your business.</p>
     <div class="services-grid">
-      <div class="service-card dl-service-card reveal reveal-delay-1">
+      <div class="service-card dl-service-card tilt-3d reveal reveal-delay-1">
         <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
         <h3>UI/UX Design</h3>
         <p>User research, wireframes, prototypes, and pixel-perfect interfaces. We design for people, not trends.</p>
@@ -677,7 +693,7 @@ footer{
           <li>Accessibility audits</li>
         </ul>
       </div>
-      <div class="service-card dl-service-card reveal reveal-delay-2">
+      <div class="service-card dl-service-card tilt-3d reveal reveal-delay-2">
         <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg></div>
         <h3>Front-End Development</h3>
         <p>React, Next.js, TypeScript — we build front-ends that are fast, maintainable, and a pleasure to work with.</p>
@@ -688,7 +704,7 @@ footer{
           <li>Progressive Web Apps</li>
         </ul>
       </div>
-      <div class="service-card dl-service-card reveal reveal-delay-3">
+      <div class="service-card dl-service-card tilt-3d reveal reveal-delay-3">
         <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <h3>Performance & SEO</h3>
         <p>Core Web Vitals, technical SEO, performance budgets, and analytics. We make sure your site performs where it matters.</p>
@@ -710,7 +726,7 @@ footer{
     <h2 class="section-title reveal">What Clients Say</h2>
     <p class="section-sub reveal">Here's what it's like working with us.</p>
     <div class="testimonials-grid">
-      <div class="testimonial-card dl-testimonial-card reveal reveal-delay-1">
+      <div class="testimonial-card dl-testimonial-card tilt-3d reveal reveal-delay-1">
         <div class="quote">DS Studios transformed our online presence completely. The attention to detail and focus on performance has genuinely improved our conversion rates.</div>
         <div class="author">
           <div class="author-avatar">SC</div>
@@ -720,7 +736,7 @@ footer{
           </div>
         </div>
       </div>
-      <div class="testimonial-card dl-testimonial-card reveal reveal-delay-2">
+      <div class="testimonial-card dl-testimonial-card tilt-3d reveal reveal-delay-2">
         <div class="quote">Working with this team was an absolute pleasure. They understood our vision from day one and delivered beyond expectations.</div>
         <div class="author">
           <div class="author-avatar">MR</div>
@@ -730,7 +746,7 @@ footer{
           </div>
         </div>
       </div>
-      <div class="testimonial-card dl-testimonial-card reveal reveal-delay-3">
+      <div class="testimonial-card dl-testimonial-card tilt-3d reveal reveal-delay-3">
         <div class="quote">We needed a platform that could scale, and DS Studios delivered exactly that. The architecture they built handles our growth effortlessly.</div>
         <div class="author">
           <div class="author-avatar">AO</div>
@@ -934,27 +950,121 @@ if (typeof DesignLang === 'undefined') {
 DesignLang.spring('.dl-cta-primary', { stiffness: 280, damping: 22, mass: 0.008 });
 DesignLang.spring('.dl-cta-secondary', { stiffness: 200, damping: 18, mass: 0.01 });
 
-// ─── Custom Cursor ───
+// ─── Cursor + Parallax Engine ───
 const dot = document.getElementById('cursorDot');
 const glow = document.getElementById('cursorGlow');
-let mx = 0, my = 0;
+const progress = document.getElementById('scrollProgress');
+const orbs = document.querySelectorAll('.ambient-bg .orb');
+let mx = 0, my = 0, lx = 0, ly = 0;
+
+// Smooth cursor lerp
+function lerp(a, b, t) { return a + (b - a) * t; }
 
 document.addEventListener('mousemove', e => {
   mx = e.clientX; my = e.clientY;
-  dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-  glow.style.left = mx + 'px'; glow.style.top = my + 'px';
 });
 
-// ─── Nav Scroll ───
+function animateCursor() {
+  lx = lerp(lx, mx, 0.15);
+  ly = lerp(ly, my, 0.15);
+  dot.style.left = lx + 'px';
+  dot.style.top = ly + 'px';
+  glow.style.left = lx + 'px';
+  glow.style.top = ly + 'px';
+  requestAnimationFrame(animateCursor);
+}
+animateCursor();
+
+// Enlarge cursor on hoverables
+const hoverables = document.querySelectorAll('a, button, .feature-card, .portfolio-card, .service-card, .testimonial-card');
+hoverables.forEach(el => {
+  el.addEventListener('mouseenter', () => { dot.style.width = '16px'; dot.style.height = '16px'; });
+  el.addEventListener('mouseleave', () => { dot.style.width = '8px'; dot.style.height = '8px'; });
+});
+
+// ─── Scroll Progress Bar ───
+window.addEventListener('scroll', () => {
+  const h = document.documentElement;
+  const pct = (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100;
+  progress.style.width = pct + '%';
+});
+
+// ─── Nav + Orb Parallax ───
 const nav = document.getElementById('nav');
-let lastScroll = 0;
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   nav.classList.toggle('scrolled', y > 80);
-  lastScroll = y;
+  
+  // Parallax orbs
+  orbs.forEach((orb, i) => {
+    const speed = 0.02 + (i * 0.01);
+    orb.style.transform = `translateY(${y * speed}px)`;
+  });
 });
 
-// ─── Scroll Reveal ───
+// ─── 3D Tilt Engine ───
+document.querySelectorAll('.tilt-3d').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const rect = el.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    const tiltX = (y - 0.5) * -12;
+    const tiltY = (x - 0.5) * 12;
+    el.style.transform = `perspective(800px) rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02,1.02,1.02)`;
+    el.style.transition = 'transform 0.1s ease-out';
+  });
+  el.addEventListener('mouseleave', () => {
+    el.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+    el.style.transition = 'transform 0.5s cubic-bezier(0.22,1,0.36,1)';
+  });
+  // Track spotlight on service/feature cards
+  if (el.classList.contains('feature-card') || el.classList.contains('service-card')) {
+    el.addEventListener('mousemove', e => {
+      const rect = el.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      el.style.setProperty('--mx', x + '%');
+      el.style.setProperty('--my', y + '%');
+    });
+  }
+});
+
+// ─── Magnetic Buttons ───
+document.querySelectorAll('.btn-primary, .btn-secondary, .submit-btn').forEach(btn => {
+  btn.addEventListener('mousemove', e => {
+    const rect = btn.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) * 0.3;
+    const y = (e.clientY - rect.top - rect.height / 2) * 0.3;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+    btn.style.transition = 'transform 0.4s cubic-bezier(0.22,1,0.36,1)';
+    setTimeout(() => { btn.style.transition = ''; }, 400);
+  });
+});
+
+// ─── Portfolio Card Spotlight Follow ───
+document.querySelectorAll('.portfolio-card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width;
+    const y = (e.clientY - rect.top) / rect.height;
+    card.style.setProperty('--spot-x', x * 100 + '%');
+    card.style.setProperty('--spot-y', y * 100 + '%');
+    // Move the bg in the opposite direction for parallax
+    const bg = card.querySelector('.card-bg');
+    if (bg) {
+      bg.style.transform = `scale(1.1) translate(${(x - 0.5) * -10}px, ${(y - 0.5) * -10}px)`;
+    }
+  });
+  card.addEventListener('mouseleave', () => {
+    const bg = card.querySelector('.card-bg');
+    if (bg) bg.style.transform = '';
+  });
+});
+
+// ─── Enhanced Scroll Reveal ───
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -962,26 +1072,31 @@ const revealObserver = new IntersectionObserver(entries => {
       revealObserver.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+}, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
-// ─── Feature Card Spotlight ───
-document.querySelectorAll('.feature-card').forEach(card => {
-  card.addEventListener('mousemove', e => {
-    const rect = card.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    card.style.setProperty('--mx', x + '%');
-    card.style.setProperty('--my', y + '%');
-  });
-});
+// ─── Section parallax divider effect ───
+// Add a subtle color shift to sections as they enter view
+const sections = document.querySelectorAll('section');
+const sectionColors = [
+  'rgba(163,217,119,0.00)',
+  'rgba(163,217,119,0.01)',
+  'rgba(163,217,119,0.00)',
+  'rgba(163,217,119,0.01)',
+  'rgba(163,217,119,0.00)',
+  'rgba(163,217,119,0.01)'
+];
 
 // ─── Contact Form ───
 document.getElementById('contactForm')?.addEventListener('submit', e => {
   e.preventDefault();
-  alert('Thanks for reaching out! This is a demo — in production, this would send an email to hello@ds-studios.com.');
-  e.target.reset();
+  const btn = e.target.querySelector('.submit-btn');
+  btn.textContent = 'Sent ✓';
+  setTimeout(() => {
+    btn.textContent = 'Send message →';
+    e.target.reset();
+  }, 2000);
 });
 
 // ─── Year ───
@@ -989,7 +1104,7 @@ document.querySelector('footer p').innerHTML = `&copy; ${new Date().getFullYear(
 
 // ─── Console ───
 console.log('%c DS Studios ✦ Built with Design Lang ', 'background:#a3d977;color:#05080e;font-size:14px;font-weight:bold;padding:8px 16px;border-radius:4px');
-console.log('%c Every component → CSS + JS Runtime. No dependencies. ', 'color:#94a3b8;font-size:12px');
+console.log('%c 16 components → compiled CSS + JS Runtime. ', 'color:#94a3b8;font-size:12px');
 </script>
 </body>
 </html>
