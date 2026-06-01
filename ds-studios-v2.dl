@@ -1,5 +1,6 @@
-// DS Studios — Complete Design Lang Components
-// Compiled to CSS + JS Runtime via `dl compile`
+// DS Studios — Design Lang v2.1
+// Updated: all copy + components aligned with brand voice
+// Brand: #a3d977 (DS green) / Empire 2026 aesthetic
 
 element glass-nav {
   surface: glass(blur: 20px)

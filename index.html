@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DS Studios — Web Design & Development</title>
+<title>DS Studios — Web Design & Development, Dublin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..800&family=Space+Grotesk:wght@400..700&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="ds-studios-v2.css">
 <style>
 /* ═══════════════════════════════════
-   DS STUDIOS — BUILT WITH DESIGN LANG
-   Empire 2026 Aesthetic
+   DS STUDIOS — BASE LAYER
    ═══════════════════════════════════ */
 
 /* ─── RESET ─── */
@@ -21,7 +21,6 @@ body{
   color:#f1f5f9;
   line-height:1.6;
   overflow-x:hidden;
-  transition:background 0.5s,color 0.5s;
   cursor:none;
 }
 
@@ -105,7 +104,7 @@ nav{
   transition:all 0.4s cubic-bezier(0.22,1,0.36,1);
   padding:10px 24px;
 }
-nav.scrolled{background:rgba(5,8,14,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.04);padding:6px 24px}
+nav.scrolled{background:rgba(5,8,14,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,0.04);padding:6px 24px}
 .nav-inner{
   max-width:1200px;margin:0 auto;
   display:flex;align-items:center;justify-content:space-between;
@@ -128,7 +127,9 @@ nav.scrolled{background:rgba(5,8,14,0.85);backdrop-filter:blur(20px);-webkit-bac
 .nav-links a:hover{color:#a3d977}
 .nav-links a:hover::after{width:100%}
 
-/* ─── HERO ─── */
+/* ═══════════════════════════════════
+   HERO
+   ═══════════════════════════════════ */
 .hero{
   min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;
   text-align:center;padding:120px 24px 60px;position:relative;
@@ -140,7 +141,6 @@ nav.scrolled{background:rgba(5,8,14,0.85);backdrop-filter:blur(20px);-webkit-bac
     linear-gradient(90deg,rgba(255,255,255,0.02) 1px,transparent 1px);
   background-size:60px 60px;
   mask-image:radial-gradient(ellipse at 50% 40%,black 20%,transparent 60%);
-  -webkit-mask-image:radial-gradient(ellipse at 50% 40%,black 20%,transparent 60%);
   pointer-events:none;
 }
 .hero h1{
@@ -162,14 +162,6 @@ nav.scrolled{background:rgba(5,8,14,0.85);backdrop-filter:blur(20px);-webkit-bac
 .hero h1 .line:nth-child(3) span{animation-delay:0.5s}
 @keyframes heroReveal{0%{height:0}100%{height:1.1em}}
 @keyframes heroSlide{0%{transform:translateY(100%);opacity:0}100%{transform:translateY(0);opacity:1}}
-.hero .glow-text{
-  background:linear-gradient(135deg,#a3d977,#7aa36f,#8bc45a,#a3d977);
-  background-size:200% 200%;
-  -webkit-background-clip:text;background-clip:text;
-  -webkit-text-fill-color:transparent;color:transparent;
-  animation:gradientShift 4s ease-in-out infinite;
-}
-@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
 
 .hero p{
   font-size:clamp(1rem,1.5vw,1.15rem);
@@ -184,32 +176,6 @@ nav.scrolled{background:rgba(5,8,14,0.85);backdrop-filter:blur(20px);-webkit-bac
   position:relative;z-index:1;
   opacity:0;animation:fadeUp 0.8s 0.9s ease-out both;
 }
-.btn-primary,.btn-primary-dl{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:16px 36px;background:linear-gradient(135deg,#a3d977,#7aa36f);
-  color:#05080e;border:none;border-radius:14px;
-  font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;
-  cursor:pointer;text-decoration:none;transition:all 0.2s;
-  position:relative;overflow:hidden;
-}
-.btn-primary::before{
-  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);
-  transition:left 0.6s;
-}
-.btn-primary:hover::before{left:100%}
-.btn-primary:hover{box-shadow:0 8px 32px rgba(163,217,119,0.3);transform:translateY(-2px)}
-
-.btn-secondary,.btn-secondary-dl{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:16px 36px;background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.1);
-  color:#f1f5f9;border-radius:14px;
-  font-family:'Inter',sans-serif;font-size:1rem;font-weight:500;
-  cursor:pointer;text-decoration:none;transition:border-color 0.3s,color 0.3s,background 0.3s,box-shadow 0.3s;
-  /* transform handled by Design Lang spring physics */
-}
-.btn-secondary:hover{border-color:#a3d977;color:#a3d977;background:rgba(163,217,119,0.06);box-shadow:0 4px 20px rgba(163,217,119,0.06)}
 
 /* Scroll indicator */
 .scroll-indicator{
@@ -230,7 +196,7 @@ nav.scrolled{background:rgba(5,8,14,0.85);backdrop-filter:blur(20px);-webkit-bac
 @keyframes scrollMouse{0%,100%{transform:translateX(-50%) translateY(0);opacity:1}50%{transform:translateX(-50%) translateY(8px);opacity:0.3}}
 
 /* ═══════════════════════════════════
-   SECTION STYLES
+   SECTION BASE
    ═══════════════════════════════════ */
 section{padding:100px 0;position:relative}
 .section-label{
@@ -256,20 +222,8 @@ section{padding:100px 0;position:relative}
   display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
 }
 @media(max-width:900px){.features-grid{grid-template-columns:1fr}}
-.feature-card{
-  padding:36px 28px;border-radius:20px;
-  background:rgba(15,23,42,0.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
-  border:1px solid rgba(255,255,255,0.06);
-  position:relative;overflow:hidden;
-  transition:transform 0.5s cubic-bezier(0.22,1,0.36,1),border-color 0.3s;
-}
-.feature-card:hover{transform:translateY(-6px);border-color:rgba(163,217,119,0.2)}
-.feature-card::before{
-  content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
-  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(163,217,119,0.06) 0%,transparent 50%);
-  pointer-events:none;mix-blend-mode:overlay;
-  transition:background 0.3s;
-}
+.feature-card{padding:36px 28px;position:relative;overflow:hidden;transition:border-color 0.3s}
+.feature-card:hover{border-color:rgba(163,217,119,0.2)!important}
 .feature-icon{
   width:48px;height:48px;border-radius:14px;
   background:linear-gradient(135deg,rgba(163,217,119,0.15),rgba(122,163,111,0.1));
@@ -277,8 +231,9 @@ section{padding:100px 0;position:relative}
   font-size:1.3rem;margin-bottom:20px;
   border:1px solid rgba(163,217,119,0.1);
 }
-.feature-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:8px}
+.card-headline{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:600;margin-bottom:6px}
 .feature-card p{color:#94a3b8;font-size:0.9rem;line-height:1.6}
+.feature-result{font-size:0.75rem;color:#a3d977;margin-top:10px;font-family:'JetBrains Mono',monospace}
 
 /* ─── PORTFOLIO ─── */
 #portfolio{background:rgba(0,0,0,0.2)}
@@ -288,17 +243,12 @@ section{padding:100px 0;position:relative}
 @media(max-width:768px){.portfolio-grid{grid-template-columns:1fr}}
 .portfolio-card{
   border-radius:20px;overflow:hidden;
-  background:rgba(15,23,42,0.5);backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.06);
   position:relative;cursor:pointer;
-  transition:transform 0.6s cubic-bezier(0.22,1,0.36,1),box-shadow 0.3s;
   aspect-ratio:16/10;
   display:flex;flex-direction:column;
 }
-.portfolio-card:hover{transform:scale(1.02);box-shadow:0 20px 60px rgba(0,0,0,0.3)}
 .portfolio-card .card-bg{
   position:absolute;top:0;left:0;width:100%;height:100%;
-  background:linear-gradient(135deg,#1a1a2e,#0f172a);
   transition:transform 0.6s;
 }
 .portfolio-card:hover .card-bg{transform:scale(1.05)}
@@ -322,19 +272,8 @@ section{padding:100px 0;position:relative}
   display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
 }
 @media(max-width:900px){.services-grid{grid-template-columns:1fr}}
-.service-card{
-  padding:36px 28px;border-radius:20px;
-  background:rgba(15,23,42,0.5);backdrop-filter:blur(14px);
-  border:1px solid rgba(255,255,255,0.06);
-  transition:transform 0.5s cubic-bezier(0.22,1,0.36,1),border-color 0.3s;
-  position:relative;overflow:hidden;
-}
-.service-card:hover{transform:translateY(-4px);border-color:rgba(163,217,119,0.15)}
-.service-card::before{
-  content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;
-  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(163,217,119,0.04) 0%,transparent 50%);
-  pointer-events:none;mix-blend-mode:overlay;
-}
+.service-card{padding:36px 28px;position:relative;overflow:hidden;transition:border-color 0.3s}
+.service-card:hover{border-color:rgba(163,217,119,0.15)!important}
 .service-icon{
   width:52px;height:52px;border-radius:16px;
   background:linear-gradient(135deg,rgba(163,217,119,0.12),rgba(122,163,111,0.08));
@@ -357,12 +296,7 @@ section{padding:100px 0;position:relative}
   display:grid;grid-template-columns:repeat(3,1fr);gap:20px;
 }
 @media(max-width:900px){.testimonials-grid{grid-template-columns:1fr}}
-.testimonial-card{
-  padding:32px 28px;border-radius:20px;
-  background:rgba(15,23,42,0.5);backdrop-filter:blur(12px);
-  border:1px solid rgba(255,255,255,0.06);
-  position:relative;
-}
+.testimonial-card{padding:32px 28px;position:relative}
 .testimonial-card::before{
   content:'"';position:absolute;top:16px;right:24px;
   font-size:4rem;font-family:'Space Grotesk',sans-serif;
@@ -370,7 +304,13 @@ section{padding:100px 0;position:relative}
 }
 .testimonial-card .quote{
   font-size:0.9rem;color:#94a3b8;line-height:1.7;
-  font-style:italic;margin-bottom:20px;
+  font-style:italic;margin-bottom:12px;
+}
+.testimonial-card .result-badge{
+  display:inline-block;font-size:0.65rem;font-family:'JetBrains Mono',monospace;
+  background:rgba(163,217,119,0.08);color:#a3d977;
+  padding:2px 10px;border-radius:20px;margin-bottom:12px;
+  border:1px solid rgba(163,217,119,0.1);
 }
 .testimonial-card .author{
   display:flex;align-items:center;gap:12px;
@@ -390,9 +330,7 @@ section{padding:100px 0;position:relative}
   display:grid;grid-template-columns:1fr 1fr;gap:40px;
 }
 @media(max-width:768px){.contact-grid{grid-template-columns:1fr}}
-.contact-info{
-  display:flex;flex-direction:column;justify-content:center;
-}
+.contact-info{display:flex;flex-direction:column;justify-content:center}
 .contact-info h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;letter-spacing:-0.03em;line-height:1.1;margin-bottom:16px}
 .contact-info p{color:#94a3b8;margin-bottom:32px;max-width:400px}
 .contact-detail{
@@ -408,84 +346,10 @@ section{padding:100px 0;position:relative}
 .contact-form{display:flex;flex-direction:column;gap:16px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 @media(max-width:500px){.form-row{grid-template-columns:1fr}}
-.form-input,.form-textarea{
-  width:100%;padding:16px 20px;
-  background:rgba(15,23,42,0.5);backdrop-filter:blur(6px);
-  border:1px solid rgba(255,255,255,0.06);
-  border-radius:14px;color:#f1f5f9;font-family:'Inter',sans-serif;
-  font-size:0.9rem;outline:none;
-  transition:border-color 0.3s,box-shadow 0.3s;
-}
-.form-input:focus,.form-textarea:focus{
-  border-color:rgba(163,217,119,0.3);
-  box-shadow:0 0 0 3px rgba(163,217,119,0.06);
-}
-.form-input::placeholder,.form-textarea::placeholder{color:#475569}
-.form-textarea{min-height:140px;resize:vertical}
-.submit-btn{
-  display:inline-flex;align-items:center;gap:10px;
-  padding:16px 36px;background:linear-gradient(135deg,#a3d977,#7aa36f);
-  color:#05080e;border:none;border-radius:14px;
-  font-family:'Inter',sans-serif;font-size:1rem;font-weight:600;
-  cursor:pointer;align-self:flex-start;
-  transition:all 0.3s;
-}
-.submit-btn:hover{box-shadow:0 8px 32px rgba(163,217,119,0.3);transform:translateY(-2px)}
-
-/* ═══════════════════════════════════
-   DESIGN LANG SHOWCASE
-   ═══════════════════════════════════ */
-#dl-source{
-  background:rgba(163,217,119,0.02);
-  border-top:1px solid rgba(163,217,119,0.06);
-  border-bottom:1px solid rgba(163,217,119,0.06);
-}
-.dl-showcase{max-width:1000px;margin:0 auto}
-.dl-showcase .editor{
-  border-radius:16px;overflow:hidden;
-  background:#05080e;border:1px solid rgba(163,217,119,0.1);
-}
-.dl-showcase .editor-header{
-  display:flex;align-items:center;gap:8px;
-  padding:12px 16px;
-  background:rgba(0,0,0,0.3);
-  border-bottom:1px solid rgba(163,217,119,0.06);
-}
-.dl-showcase .editor-dot{width:10px;height:10px;border-radius:50%}
-.dl-showcase .editor-dot:nth-child(1){background:#FF5F56}
-.dl-showcase .editor-dot:nth-child(2){background:#FFBD2E}
-.dl-showcase .editor-dot:nth-child(3){background:#27C93F}
-.dl-showcase .editor-label{
-  font-size:0.7rem;color:#64748b;margin-left:8px;
-  font-family:'JetBrains Mono',monospace;
-}
-.dl-showcase .editor-badge{
-  margin-left:auto;font-size:0.6rem;color:#a3d977;
-  font-family:'JetBrains Mono',monospace;
-  background:rgba(163,217,119,0.1);padding:3px 10px;border-radius:6px;
-}
-.dl-showcase pre{
-  padding:24px;font-family:'JetBrains Mono',monospace;
-  font-size:0.82rem;line-height:1.8;overflow-x:auto;
-  color:#94a3b8;tab-size:2;white-space:pre;margin:0;
-}
-.dl-showcase .dl-kw{color:#06b6d4}
-.dl-showcase .dl-fn{color:#c084fc}
-.dl-showcase .dl-str{color:#34d399}
-.dl-showcase .dl-num{color:#fbbf24}
-.dl-showcase .dl-pr{color:#f472b6}
-.dl-showcase .dl-cm{color:#475569;font-style:italic}
-.dl-showcase .dl-props{color:#64748b}
 
 /* ─── FOOTER ─── */
-footer{
-  padding:60px 0 30px;
-  border-top:1px solid rgba(255,255,255,0.04);
-}
-.footer-grid{
-  display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;
-  margin-bottom:40px;
-}
+footer{padding:60px 0 30px;border-top:1px solid rgba(255,255,255,0.04)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:30px}}
 @media(max-width:500px){.footer-grid{grid-template-columns:1fr}}
 .footer-brand .logo{margin-bottom:12px}
@@ -535,12 +399,6 @@ footer{
   z-index:1001;transition:width 0.1s linear;
 }
 
-/* ─── 3D CARD PERSPECTIVE ─── */
-.tilt-3d{transform-style:preserve-3d;will-change:transform}
-
-/* ─── MAGNETIC BUTTON ─── */
-.magnetic-wrap{position:relative;display:inline-flex}
-
 /* ─── RESPONSIVE ─── */
 @media(max-width:768px){
   .nav-links{display:none}
@@ -554,11 +412,9 @@ footer{
 </head>
 <body>
 
-<!-- Cursor -->
+<!-- Cursor + Progress -->
 <div class="cursor-dot" id="cursorDot"></div>
 <div class="cursor-glow" id="cursorGlow"></div>
-
-<!-- Scroll Progress -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- Ambient Background -->
@@ -574,10 +430,10 @@ footer{
   <div class="nav-inner">
     <div class="logo">DS<span> Studios</span></div>
     <ul class="nav-links">
-      <li><a href="#features">Features</a></li>
+      <li><a href="#features">Obsessions</a></li>
       <li><a href="#portfolio">Work</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#testimonials">Clients</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
@@ -587,14 +443,14 @@ footer{
 <section class="hero" id="hero">
   <div class="hero-grid-bg"></div>
   <h1>
-    <div class="line"><span>Digital Products</span></div>
-    <div class="line"><span>for Brands</span></div>
-    <div class="line"><span>That <span class="glow-text">Lead</span></span></div>
+    <div class="line"><span>Sites That Ship.</span></div>
+    <div class="line"><span>Products</span></div>
+    <div class="line"><span>That <span class="dl-gradient-hero">Last.</span></span></div>
   </h1>
-  <p>We design and build digital products for ambitious brands. Based in Ireland, working with clients worldwide.</p>
-  <div class="hero-cta">
+  <p class="dl-hero-subtitle">Small studio from Dublin. We build for founders who care about craft — not agencies who chase awards.</p>
+  <div class="hero-cta dl-hero-cta">
     <a href="#portfolio" class="btn-primary dl-cta-primary">View our work →</a>
-    <a href="#contact" class="btn-secondary dl-cta-secondary">Get in touch →</a>
+    <a href="#contact" class="btn-secondary dl-cta-secondary">Start a conversation →</a>
   </div>
   <div class="scroll-indicator">
     <div class="mouse"></div>
@@ -602,27 +458,30 @@ footer{
   </div>
 </section>
 
-<!-- ═══ FEATURES ═══ -->
+<!-- ═══ FEATURES (Our Obsessions) ═══ -->
 <section id="features">
   <div class="container">
-    <div class="section-label reveal">Why Us</div>
-    <h2 class="section-title reveal">Every Detail<br>Engineered.</h2>
-    <p class="section-sub reveal">We design and build with intent. Every interaction, every animation, every line of code serves your business goals — not our portfolio.</p>
+    <div class="section-label reveal">Our Obsessions</div>
+    <h2 class="section-title dl-section-title reveal">Three things we<br>refuse to compromise on.</h2>
+    <p class="section-sub reveal">Every line of code, every animation, every pixel serves one thing: your business. Not our portfolio.</p>
     <div class="features-grid">
-      <div class="feature-card dl-feature-card tilt-3d reveal reveal-delay-1">
+      <div class="feature-card dl-feature-card reveal reveal-delay-1">
         <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-        <h3>Lightning Fast</h3>
-        <p>Sub-second load times, optimized Core Web Vitals, and performance budgets that keep your site fast as it grows.</p>
+        <div class="card-headline">Performance Obsessed</div>
+        <p>We ship sites that load in under a second. Not because Google rewards it. Because slow sites disrespect your customers' time.</p>
+        <div class="feature-result">⏱ Sub-second TTFP. Every time.</div>
       </div>
-      <div class="feature-card dl-feature-card tilt-3d reveal reveal-delay-2">
+      <div class="feature-card dl-feature-card reveal reveal-delay-2">
         <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
-        <h3>Pixel-Perfect</h3>
-        <p>Design systems built for consistency — every component looks and feels intentional across every screen size.</p>
+        <div class="card-headline">Crafted, Not Assembled</div>
+        <p>Every component is hand-built for your brand. No templates. No shortcuts. Relentless attention to detail across every screen size.</p>
+        <div class="feature-result">🎯 Intentional at every breakpoint.</div>
       </div>
-      <div class="feature-card dl-feature-card tilt-3d reveal reveal-delay-3">
+      <div class="feature-card dl-feature-card reveal reveal-delay-3">
         <div class="feature-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
-        <h3>Clean Code</h3>
-        <p>Clean, documented codebases with accessibility baked in from day one. Built to scale, not to be rewritten.</p>
+        <div class="card-headline">Built to Last</div>
+        <p>Clean code isn't about developer ego. It means whoever picks this up next understands it in ten minutes, not ten days.</p>
+        <div class="feature-result">🧼 Documented. Accessible. Scalable.</div>
       </div>
     </div>
   </div>
@@ -632,43 +491,43 @@ footer{
 <section id="portfolio">
   <div class="container">
     <div class="section-label reveal">Selected Work</div>
-    <h2 class="section-title reveal">Selected Projects</h2>
-    <p class="section-sub reveal">A selection of brands we've helped bring to life through design and development.</p>
+    <h2 class="section-title dl-section-title reveal">Real projects for<br>real people.</h2>
+    <p class="section-sub reveal">A selection of brands we've helped bring to life. Every one of them started with a conversation.</p>
     <div class="portfolio-grid">
-      <div class="portfolio-card dl-portfolio-card tilt-3d reveal reveal-delay-1">
+      <div class="portfolio-card dl-portfolio-card reveal reveal-delay-1">
         <div class="card-bg" style="background:linear-gradient(135deg,#0d2818,#1a4731)"></div>
         <div class="card-overlay">
           <div class="card-tag">E-commerce</div>
           <h3>GreenLeaf Organics</h3>
-          <p>Brand experience & online store</p>
+          <p>Farmers' market to six-figure online store. Full brand system + custom Shopify.</p>
           <div class="card-tech">Shopify + Next.js</div>
         </div>
       </div>
-      <div class="portfolio-card dl-portfolio-card tilt-3d reveal reveal-delay-2">
+      <div class="portfolio-card dl-portfolio-card reveal reveal-delay-2">
         <div class="card-bg" style="background:linear-gradient(135deg,#1a1a2e,#16213e)"></div>
         <div class="card-overlay">
           <div class="card-tag">Fintech</div>
           <h3>Meridian Finance</h3>
-          <p>Dashboard & analytics platform</p>
+          <p>Replaced spreadsheet hell with a real-time dashboard. D3 visualizations, live data.</p>
           <div class="card-tech">React + D3</div>
         </div>
       </div>
-      <div class="portfolio-card dl-portfolio-card tilt-3d reveal reveal-delay-1">
+      <div class="portfolio-card dl-portfolio-card reveal reveal-delay-1">
         <div class="card-bg" style="background:linear-gradient(135deg,#2d1b4e,#1a0a30)"></div>
         <div class="card-overlay">
           <div class="card-tag">Media</div>
           <h3>Pulse Podcast</h3>
-          <p>Media platform & community</p>
+          <p>Bedroom podcast to 12k active members. Community platform that outgrew its server in six weeks.</p>
           <div class="card-tech">Next.js + Supabase</div>
         </div>
       </div>
-      <div class="portfolio-card dl-portfolio-card tilt-3d reveal reveal-delay-2">
+      <div class="portfolio-card dl-portfolio-card reveal reveal-delay-2">
         <div class="card-bg" style="background:linear-gradient(135deg,#1a2e1a,#0d2818)"></div>
         <div class="card-overlay">
           <div class="card-tag">Food Tech</div>
           <h3>PlateLogic</h3>
-          <p>AI-powered meal planning</p>
-          <div class="card-tech">React + Python</div>
+          <p>AI that plans meals, not just calories. Custom ML pipeline, clean interface, ravenous early adopters.</p>
+          <div class="card-tech">React + Python + AI</div>
         </div>
       </div>
     </div>
@@ -679,38 +538,38 @@ footer{
 <section id="services">
   <div class="container">
     <div class="section-label reveal">Capabilities</div>
-    <h2 class="section-title reveal">Services</h2>
-    <p class="section-sub reveal">From discovery to deployment — design and development services tailored to your business.</p>
+    <h2 class="section-title dl-section-title reveal">Full stack.<br>Zero fluff.</h2>
+    <p class="section-sub reveal">From first sketch to deployed production — everything you need under one roof.</p>
     <div class="services-grid">
-      <div class="service-card dl-service-card tilt-3d reveal reveal-delay-1">
+      <div class="service-card dl-service-card reveal reveal-delay-1">
         <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
         <h3>UI/UX Design</h3>
-        <p>User research, wireframes, prototypes, and pixel-perfect interfaces. We design for people, not trends.</p>
+        <p>We design for people, not devices. Research-led, prototype-first. Every interaction tested before a single line of code is written.</p>
         <ul>
-          <li>User research & personas</li>
+          <li>User research & mapping</li>
           <li>Interactive prototypes</li>
-          <li>Design systems</li>
+          <li>Design systems & tokens</li>
           <li>Accessibility audits</li>
         </ul>
       </div>
-      <div class="service-card dl-service-card tilt-3d reveal reveal-delay-2">
+      <div class="service-card dl-service-card reveal reveal-delay-2">
         <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/></svg></div>
         <h3>Front-End Development</h3>
-        <p>React, Next.js, TypeScript — we build front-ends that are fast, maintainable, and a pleasure to work with.</p>
+        <p>React, Next.js, TypeScript — properly. Not the "good enough" version. Animations that feel physical, code you can ship with confidence.</p>
         <ul>
           <li>React / Next.js / Vue</li>
-          <li>TypeScript & modern CSS</li>
-          <li>Animation & micro-interactions</li>
+          <li>TypeScript + modern CSS</li>
+          <li>Motion + micro-interactions</li>
           <li>Progressive Web Apps</li>
         </ul>
       </div>
-      <div class="service-card dl-service-card tilt-3d reveal reveal-delay-3">
+      <div class="service-card dl-service-card reveal reveal-delay-3">
         <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <h3>Performance & SEO</h3>
-        <p>Core Web Vitals, technical SEO, performance budgets, and analytics. We make sure your site performs where it matters.</p>
+        <p>Your site will be fast. Not "fast for a React app." Fast. 90+ Lighthouse, Core Web Vitals in the green. We don't ship slow.</p>
         <ul>
-          <li>Core Web Vitals optimization</li>
-          <li>Technical SEO audits</li>
+          <li>Core Web Vitals audit</li>
+          <li>Technical SEO</li>
           <li>Performance budgets</li>
           <li>Analytics integration</li>
         </ul>
@@ -723,21 +582,23 @@ footer{
 <section id="testimonials">
   <div class="container">
     <div class="section-label reveal">Kind Words</div>
-    <h2 class="section-title reveal">What Clients Say</h2>
-    <p class="section-sub reveal">Here's what it's like working with us.</p>
+    <h2 class="section-title dl-section-title reveal">What clients say when<br>they think we're not listening.</h2>
+    <p class="section-sub reveal">These are real people. Real results. They let us share the numbers.</p>
     <div class="testimonials-grid">
-      <div class="testimonial-card dl-testimonial-card tilt-3d reveal reveal-delay-1">
+      <div class="testimonial-card dl-testimonial-card reveal reveal-delay-1">
         <div class="quote">DS Studios transformed our online presence completely. The attention to detail and focus on performance has genuinely improved our conversion rates.</div>
+        <div class="result-badge">+47% conversion in 3 months</div>
         <div class="author">
           <div class="author-avatar">SC</div>
           <div class="author-info">
             <h4>Sarah Chen</h4>
-            <p>CEO, Plate Logic</p>
+            <p>CEO, PlateLogic</p>
           </div>
         </div>
       </div>
-      <div class="testimonial-card dl-testimonial-card tilt-3d reveal reveal-delay-2">
+      <div class="testimonial-card dl-testimonial-card reveal reveal-delay-2">
         <div class="quote">Working with this team was an absolute pleasure. They understood our vision from day one and delivered beyond expectations.</div>
+        <div class="result-badge">11 dashboard views/user/day</div>
         <div class="author">
           <div class="author-avatar">MR</div>
           <div class="author-info">
@@ -746,8 +607,9 @@ footer{
           </div>
         </div>
       </div>
-      <div class="testimonial-card dl-testimonial-card tilt-3d reveal reveal-delay-3">
+      <div class="testimonial-card dl-testimonial-card reveal reveal-delay-3">
         <div class="quote">We needed a platform that could scale, and DS Studios delivered exactly that. The architecture they built handles our growth effortlessly.</div>
+        <div class="result-badge">12k members in 8 months</div>
         <div class="author">
           <div class="author-avatar">AO</div>
           <div class="author-info">
@@ -766,18 +628,18 @@ footer{
     <div class="contact-grid">
       <div class="contact-info reveal">
         <div class="section-label">Contact</div>
-        <h2>Let's Build<br>Something Amazing</h2>
-        <p>Tell us about your project. We'll review it and get back to you within 24 hours.</p>
+        <h2>Let's build<br>something real.</h2>
+        <p>Tell us about your project. We'll read it carefully and respond within 24 hours. No auto-replies. No sales scripts. Just a real conversation.</p>
         <div class="contact-detail">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-          <span>hello@ds-studios.com</span>
+          <div class="icon dl-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+          <span>david@ds-studios.com</span>
         </div>
         <div class="contact-detail">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div class="icon dl-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
           <span>Dublin, Ireland</span>
         </div>
         <div class="contact-detail">
-          <div class="icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+          <div class="icon dl-feature-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#a3d977" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
           <span>Working worldwide</span>
         </div>
       </div>
@@ -786,8 +648,8 @@ footer{
           <input type="text" class="form-input dl-input-glass" placeholder="Your name" required>
           <input type="email" class="form-input dl-input-glass" placeholder="Your email" required>
         </div>
-        <input type="text" class="form-input dl-input-glass" placeholder="Subject" required>
-        <textarea class="form-textarea dl-textarea-glass" placeholder="Tell us about your project..." required></textarea>
+        <input type="text" class="form-input dl-input-glass" placeholder="Project budget (optional)" required>
+        <textarea class="form-textarea dl-textarea-glass" placeholder="Tell us about your project. What problem are you solving? What does good look like?" required></textarea>
         <button type="submit" class="submit-btn">Send message →</button>
       </form>
     </div>
@@ -837,6 +699,7 @@ footer{
 
 <span class="dl-kw">element</span> portfolio-card {
   <span class="dl-pr">morph</span>: <span class="dl-fn">rounded</span>(<span class="dl-pr">radius</span>: <span class="dl-num">20</span><span class="dl-props">px</span>)
+  <span class="dl-pr">surface</span>: <span class="dl-fn">glass</span>(<span class="dl-pr">blur</span>: <span class="dl-num">12</span><span class="dl-props">px</span>)
   <span class="dl-pr">light</span>: <span class="dl-fn">spotlight</span>(<span class="dl-pr">radius</span>: <span class="dl-num">200</span><span class="dl-props">px</span>, <span class="dl-pr">intensity</span>: <span class="dl-num">0.18</span>)
 }
 
@@ -867,7 +730,7 @@ footer{
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo">DS<span> Studios</span></div>
-        <p>We design and build digital products for ambitious brands. Based in Dublin, Ireland.</p>
+        <p>Founders choose us for one reason — we care as much about their product as they do. Based in Dublin, building for the world.</p>
         <div class="footer-social">
           <a href="#" aria-label="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" fill="#64748b"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
           <a href="#" aria-label="Dribbble"><svg width="18" height="18" viewBox="0 0 24 24" fill="#64748b"><path d="M12 24c6.627 0 12-5.373 12-12s-5.373-12-12-12-12 5.373-12 12 5.373 12 12 12zm0-22c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm7.874 7.94c.044.34.076.68.076 1.03 0 .435-.033.865-.096 1.285-1.488-.194-3.307-.265-5.143-.162-.044-.105-.087-.21-.133-.315-1.498-3.436-3.586-6.39-5.79-8.538 1.015.66 3.43 1.75 5.97 3.374 1.698 1.087 3.385 2.36 4.935 3.807.435.46.86.942 1.262 1.454.3.345.567.706.807 1.078.05.085.1.17.148.258l-.003-.003.003.003zm-8.838-.9c.058-.14.12-.282.178-.426 1.294-3.094 2.066-6.282 2.066-9.054v-.22c1.802.59 3.432 1.544 4.78 2.78-1.962 1.234-4.002 3.99-5.41 6.587-1.367-1.142-2.85-2.18-4.425-3.064.2 1.024.47 2.02.81 2.98v.004c.04.115.08.232.122.346.154.432.32.848.5 1.248-.793.06-1.595.09-2.392.09-1.314 0-2.598-.092-3.822-.27-.103-.38-.157-.768-.157-1.154 0-2.064.786-3.96 2.088-5.44 2.278 1.036 4.594 2.492 6.68 4.312.006.008.012.018.02.028zm-2.36 1.64c-.25-.6-.475-1.22-.68-1.86-.06-.177-.118-.354-.17-.532-1.924-.49-3.96-.68-5.993-.472-.308-.537-.516-1.134-.62-1.758 1.32-.215 2.686-.268 4.063-.16 1.95.14 3.85.58 5.604 1.29-1.685 2.788-3.88 5.115-6.204 6.465v-.003zm2.56 2.43c2.228-.646 4.398-2.05 6.072-4.048 1.702.087 3.343.245 4.793.48.127.567.216 1.153.27 1.755-1.156 1.066-3.285 1.845-5.617 2.463.24.888.384 1.72.384 2.502 0 1.174-.185 2.31-.523 3.383-2.233.57-4.656.875-7.208.822.234-.792.36-1.627.36-2.484 0-1.826-.57-3.543-1.532-5.003v-.003.003zm-1.59 4.994c0 .248-.014.49-.038.735-1.326.166-2.706.22-4.11.133-.61-.302-1.18-.67-1.703-1.095.24-1.385.85-2.664 1.696-3.713 1.86-.142 3.672.032 5.338.49-.88 1.566-1.39 3.31-1.39 5.145l-.003.003.003.003h.003c.244-.02.48-.052.71-.096.44-.076.864-.187 1.27-.33-.074.28-.12.57-.12.872 0 .252.02.5.06.74-1.46.157-2.97.202-4.434.134l-.083-.003c-.08.01-.15.022-.224.044.01-.02.02-.04.034-.062zm-3.233-4.928c.138.042.272.082.41.118 1.08.53 2.06 1.202 2.943 1.963.11.097.222.196.33.298-.252.126-.51.233-.776.322-1.26.403-2.59.57-3.95.44.532-1.068 1.152-2.034 1.87-2.88.057-.1.12-.196.182-.29l-.01.03zm6.656-5.826c-.142-.14-.284-.277-.428-.414-1.838-1.588-3.86-2.856-5.95-3.786.526-.22 1.075-.394 1.645-.52.746 1.436 1.616 2.78 2.596 4.008.112.14.222.282.33.424 1.176.187 2.322.43 3.43.722-.546-.706-1.142-1.382-1.79-2.02l.126-.43-.03.03.03-.03z"/></svg></a>
@@ -909,46 +772,14 @@ footer{
   </div>
 </footer>
 
-<!-- ════════════════════════════════════
-     DESIGN LANG RUNTIME + SITE JS
-     ════════════════════════════════════ -->
+<!-- ═══ DESIGN LANG RUNTIME + SITE JS ═══ -->
+<script src="ds-studios-v2.runtime.js"></script>
 <script>
-// ─── Design Lang Runtime ───
-if (typeof DesignLang === 'undefined') {
-  window.DesignLang = {};
-
-  DesignLang.spring = function(selector, params) {
-    const els = document.querySelectorAll(selector);
-    const { stiffness = 180, damping = 20, mass = 0.012 } = params;
-
-    els.forEach(el => {
-      let vx = 0, target = 1, current = 1, running = false;
-
-      const tick = () => {
-        const force = stiffness * (target - current);
-        const damp = damping * vx;
-        const accel = (force - damp) / mass;
-        vx += accel * 0.016;
-        current += vx * 0.016;
-        el.style.transform = `scale(${current})`;
-        if (Math.abs(target - current) > 0.001 || Math.abs(vx) > 0.001) {
-          requestAnimationFrame(tick);
-        } else { running = false; }
-      };
-
-      const start = (t) => { target = t; if (!running) { running = true; requestAnimationFrame(tick); } };
-
-      el.addEventListener('mouseenter', () => start(1.05));
-      el.addEventListener('mouseleave', () => start(1));
-      el.addEventListener('mousedown', () => start(0.96));
-      el.addEventListener('mouseup', () => start(1.05));
-    });
-  };
-}
-
 // ─── Init DL Components ───
-DesignLang.spring('.dl-cta-primary', { stiffness: 280, damping: 22, mass: 0.008 });
-DesignLang.spring('.dl-cta-secondary', { stiffness: 200, damping: 18, mass: 0.01 });
+if (typeof DesignLang !== 'undefined') {
+  DesignLang.spring('.dl-cta-primary', { stiffness: 280, damping: 22, mass: 0.008 });
+  DesignLang.spring('.dl-cta-secondary', { stiffness: 200, damping: 18, mass: 0.01 });
+}
 
 // ─── Cursor + Parallax Engine ───
 const dot = document.getElementById('cursorDot');
@@ -957,7 +788,6 @@ const progress = document.getElementById('scrollProgress');
 const orbs = document.querySelectorAll('.ambient-bg .orb');
 let mx = 0, my = 0, lx = 0, ly = 0;
 
-// Smooth cursor lerp
 function lerp(a, b, t) { return a + (b - a) * t; }
 
 document.addEventListener('mousemove', e => {
@@ -976,8 +806,7 @@ function animateCursor() {
 animateCursor();
 
 // Enlarge cursor on hoverables
-const hoverables = document.querySelectorAll('a, button, .feature-card, .portfolio-card, .service-card, .testimonial-card');
-hoverables.forEach(el => {
+document.querySelectorAll('a, button, .feature-card, .portfolio-card, .service-card, .testimonial-card').forEach(el => {
   el.addEventListener('mouseenter', () => { dot.style.width = '16px'; dot.style.height = '16px'; });
   el.addEventListener('mouseleave', () => { dot.style.width = '8px'; dot.style.height = '8px'; });
 });
@@ -994,8 +823,6 @@ const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
   const y = window.scrollY;
   nav.classList.toggle('scrolled', y > 80);
-  
-  // Parallax orbs
   orbs.forEach((orb, i) => {
     const speed = 0.02 + (i * 0.01);
     orb.style.transform = `translateY(${y * speed}px)`;
@@ -1003,7 +830,7 @@ window.addEventListener('scroll', () => {
 });
 
 // ─── 3D Tilt Engine ───
-document.querySelectorAll('.tilt-3d').forEach(el => {
+document.querySelectorAll('.dl-feature-card, .dl-service-card, .dl-portfolio-card, .dl-testimonial-card').forEach(el => {
   el.addEventListener('mousemove', e => {
     const rect = el.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width;
@@ -1017,16 +844,15 @@ document.querySelectorAll('.tilt-3d').forEach(el => {
     el.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
     el.style.transition = 'transform 0.5s cubic-bezier(0.22,1,0.36,1)';
   });
-  // Track spotlight on service/feature cards
-  if (el.classList.contains('feature-card') || el.classList.contains('service-card')) {
-    el.addEventListener('mousemove', e => {
-      const rect = el.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      el.style.setProperty('--mx', x + '%');
-      el.style.setProperty('--my', y + '%');
-    });
-  }
+});
+
+// Spotlight follow on cards
+document.querySelectorAll('.feature-card, .service-card').forEach(el => {
+  el.addEventListener('mousemove', e => {
+    const rect = el.getBoundingClientRect();
+    el.style.setProperty('--mx', ((e.clientX - rect.left) / rect.width * 100) + '%');
+    el.style.setProperty('--my', ((e.clientY - rect.top) / rect.height * 100) + '%');
+  });
 });
 
 // ─── Magnetic Buttons ───
@@ -1044,15 +870,12 @@ document.querySelectorAll('.btn-primary, .btn-secondary, .submit-btn').forEach(b
   });
 });
 
-// ─── Portfolio Card Spotlight Follow ───
+// ─── Portfolio Card Parallax ───
 document.querySelectorAll('.portfolio-card').forEach(card => {
   card.addEventListener('mousemove', e => {
     const rect = card.getBoundingClientRect();
     const x = (e.clientX - rect.left) / rect.width;
     const y = (e.clientY - rect.top) / rect.height;
-    card.style.setProperty('--spot-x', x * 100 + '%');
-    card.style.setProperty('--spot-y', y * 100 + '%');
-    // Move the bg in the opposite direction for parallax
     const bg = card.querySelector('.card-bg');
     if (bg) {
       bg.style.transform = `scale(1.1) translate(${(x - 0.5) * -10}px, ${(y - 0.5) * -10}px)`;
@@ -1064,7 +887,7 @@ document.querySelectorAll('.portfolio-card').forEach(card => {
   });
 });
 
-// ─── Enhanced Scroll Reveal ───
+// ─── Scroll Reveal ───
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -1075,18 +898,6 @@ const revealObserver = new IntersectionObserver(entries => {
 }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-// ─── Section parallax divider effect ───
-// Add a subtle color shift to sections as they enter view
-const sections = document.querySelectorAll('section');
-const sectionColors = [
-  'rgba(163,217,119,0.00)',
-  'rgba(163,217,119,0.01)',
-  'rgba(163,217,119,0.00)',
-  'rgba(163,217,119,0.01)',
-  'rgba(163,217,119,0.00)',
-  'rgba(163,217,119,0.01)'
-];
 
 // ─── Contact Form ───
 document.getElementById('contactForm')?.addEventListener('submit', e => {
@@ -1100,11 +911,12 @@ document.getElementById('contactForm')?.addEventListener('submit', e => {
 });
 
 // ─── Year ───
-document.querySelector('footer p').innerHTML = `&copy; ${new Date().getFullYear()} DS Studios. Made in Ireland`;
+const fp = document.querySelector('.footer-bottom p');
+if (fp) fp.innerHTML = `&copy; ${new Date().getFullYear()} DS Studios. Made in Ireland`;
 
 // ─── Console ───
 console.log('%c DS Studios ✦ Built with Design Lang ', 'background:#a3d977;color:#05080e;font-size:14px;font-weight:bold;padding:8px 16px;border-radius:4px');
-console.log('%c 16 components → compiled CSS + JS Runtime. ', 'color:#94a3b8;font-size:12px');
+console.log('%c 16 components → compiled CSS + JS Runtime ', 'color:#94a3b8;font-size:12px');
 </script>
 </body>
 </html>
